@@ -1,21 +1,26 @@
 import Twilio from "twilio";
 import "dotenv/config";
+import express from "express";
 
-import { serve } from "@hono/node-server";
-import { Hono } from "hono";
+const app = express();
 
-const app = new Hono();
+app.use(Twilio.webhook());
+app.use(express.json());
 
-app.get("/", (c) => {
+app.post("/", (req, res) => {
+  const body = req.body;
+
+  console.log("Received body:", body);
+
+  const from = body.From || "unknown";
+  const to = body.To || "unknown";
+
   const response = new Twilio.twiml.VoiceResponse();
-  response.say("Hello World!");
+  response.say(`Hello ${from} from ${to}!`);
 
-  return c.body(response.toString(), 200, {
-    "Content-Type": "application/xml",
-  });
+  res.status(200);
+  res.set("Content-Type", "text/xml");
+  res.send(response.toString());
 });
 
-serve({
-  fetch: app.fetch,
-  port: process.env.PORT ? Number(process.env.PORT) : 3000,
-});
+app.listen(process.env.PORT ? Number(process.env.PORT) : 3002);

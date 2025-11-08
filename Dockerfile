@@ -31,6 +31,6 @@ COPY --from=builder --chown=hono:nodejs /app/src /app/dist
 COPY --from=builder --chown=hono:nodejs /app/package.json /app/package.json
 
 USER hono
-EXPOSE 3000
+EXPOSE 3002
 
 CMD ["node", "/app/dist/app.ts"]

@@ -4,16 +4,16 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon src/app.ts",
+    "mock": "pnpx ngrok http 3002",
     "lint": "eslint .",
     "preinstall": "npx only-allow pnpm",
     "prettier:format": "prettier --write \"**/*.{ts,tsx,js,md,mdx,css,yaml}\"",
     "prettier:check": "prettier --check \"**/*.{ts,tsx,js,md,mdx,css,yaml}\""
   },
   "dependencies": {
-    "@hono/node-server": "^1.19.6",
     "@twilio/runtime-handler": "2.1.0",
     "dotenv": "^17.2.3",
-    "hono": "^4.10.4",
+    "express": "^5.1.0",
     "twilio": "5.10.4"
   },
   "devDependencies": {
