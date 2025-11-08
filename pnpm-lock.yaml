@@ -12,8 +12,8 @@ importers:
         specifier: ^1.19.6
         version: 1.19.6(hono@4.10.4)
       '@twilio/runtime-handler':
-        specifier: 2.0.3
-        version: 2.0.3
+        specifier: 2.1.0
+        version: 2.1.0
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
@@ -198,8 +198,8 @@ packages:
   '@twilio-labs/serverless-runtime-types@4.0.1':
     resolution: {integrity: sha512-JepyB0ggxmAKISKHfxZa8UyLPdKsFaoD4Tk/8TY4qxMusJVnSEZZQ8ecMgVhmlXINVb5m2Ybw8N+iXL10DticQ==}
 
-  '@twilio/runtime-handler@2.0.3':
-    resolution: {integrity: sha512-Smjd7XkSIzE9TDx6sZwYwYMKk96Jcs2Klkt3nkJnTrN6bsyu+lkeOT0q3vrTm143uBEhBZlnGvefiBEJ4RGqng==}
+  '@twilio/runtime-handler@2.1.0':
+    resolution: {integrity: sha512-IUDJKDW0f9EsEkx73JGTXFWyPxHtWr3kz4B7tFncben7W97pIMfMgboJtpNLkbdYpLw6w/PNUXLPCJO4LcWEZg==}
 
   '@types/body-parser@1.19.6':
     resolution: {integrity: sha512-HLFeCYgz89uk22N5Qg3dvGvsv46B8GLvKKo1zKG4NybA8U2DiEO3w9lqGg29t/tfLRJpJ6iQxnVw4OnB7MoM9g==}
@@ -2366,7 +2366,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@twilio/runtime-handler@2.0.3':
+  '@twilio/runtime-handler@2.1.0':
     dependencies:
       '@twilio-labs/serverless-runtime-types': 4.0.1(debug@3.2.7)
       '@types/express': 4.17.21
