@@ -19,6 +19,13 @@ export default defineConfig([
         },
       ],
     },
+    languageOptions: {
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        tsconfigRootDir: __dirname,
+        project: "./tsconfig.json",
+      },
+    },
   },
   globalIgnores(["dist/", "node_modules/"]),
 ]);
