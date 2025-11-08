@@ -21,8 +21,8 @@ importers:
         specifier: ^4.10.4
         version: 4.10.4
       twilio:
-        specifier: 5.0.3
-        version: 5.0.3
+        specifier: 5.10.4
+        version: 5.10.4
     devDependencies:
       '@eslint/js':
         specifier: ^9.39.1
@@ -2062,8 +2062,8 @@ packages:
     resolution: {integrity: sha512-LdNBQfOe0dY2oJH2sAsrxazpgfFQo5yXGxe96QA8UWB5uu+433PrUbkv8gQ5RmrRCqUTPQ0aOrIyAdBr1aB03Q==}
     engines: {node: '>=14.0'}
 
-  twilio@5.0.3:
-    resolution: {integrity: sha512-92XIiR7tbtttS2cSD8/2mRUsUrrnaHIcqymGZSgFFpf5rjCxANETEPhWajs3bzJQo3Rb/ALBKh/BBprQS71oMQ==}
+  twilio@5.10.4:
+    resolution: {integrity: sha512-5dUsT3/O1+WxyJop2a6a4r92NAgtEQL7+oSU4t466NPhDaPOOBH/uomxnYHD5GWouYo7CZ/B7XSOwlhEUAHpWg==}
     engines: {node: '>=14.0'}
 
   type-check@0.4.0:
@@ -4459,7 +4459,7 @@ snapshots:
       - debug
       - supports-color
 
-  twilio@5.0.3:
+  twilio@5.10.4:
     dependencies:
       axios: 1.13.2(debug@3.2.7)
       dayjs: 1.11.19
@@ -4467,7 +4467,6 @@ snapshots:
       jsonwebtoken: 9.0.2
       qs: 6.14.0
       scmp: 2.1.0
-      url-parse: 1.5.10
       xmlbuilder: 13.0.2
     transitivePeerDependencies:
       - debug
