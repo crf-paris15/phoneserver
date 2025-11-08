@@ -24,10 +24,10 @@ jobs:
       - name: docker-compose pull and down
         uses: appleboy/ssh-action@v1.2.2
         with:
-          host: ${{ vars.SSH_HOST }}
+          host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          port: ${{ vars.SSH_PORT }}
+          port: ${{ secrets.SSH_PORT }}
           script: |
             cd /var/docker/${{ inputs.site }}
             docker compose pull
