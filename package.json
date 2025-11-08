@@ -1,0 +1,39 @@
+{
+  "name": "phoneserver",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon src/app.ts",
+    "lint": "eslint .",
+    "preinstall": "npx only-allow pnpm",
+    "prettier:format": "prettier --write \"**/*.{ts,tsx,js,md,mdx,css,yaml}\"",
+    "prettier:check": "prettier --check \"**/*.{ts,tsx,js,md,mdx,css,yaml}\""
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.6",
+    "@twilio/runtime-handler": "2.0.3",
+    "dotenv": "^17.2.3",
+    "hono": "^4.10.4",
+    "twilio": "5.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "@typescript-eslint/parser": "^8.46.3",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "jiti": "^2.6.1",
+    "nodemon": "^3.1.10",
+    "prettier": "3.6.2",
+    "ts-node": "^10.9.2",
+    "twilio-run": "^4.2.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.3"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "packageManager": "pnpm@10.20.0",
+  "type": "module"
+}

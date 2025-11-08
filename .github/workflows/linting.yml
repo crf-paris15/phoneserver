@@ -1,0 +1,25 @@
+name: Linting
+permissions:
+  contents: read
+on: push
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.20.0
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          cache: "pnpm"
+          node-version: 22
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run ESLint
+        run: pnpm lint
+      - name: Run Prettier
+        run: pnpm prettier:check
+        if: success() || failure()
