@@ -14,26 +14,26 @@
     "@twilio/runtime-handler": "2.1.0",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "twilio": "5.10.4"
+    "twilio": "5.10.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@types/node": "^24.10.0",
-    "@typescript-eslint/eslint-plugin": "^8.46.3",
-    "@typescript-eslint/parser": "^8.46.3",
+    "@types/node": "^24.10.1",
+    "@typescript-eslint/eslint-plugin": "^8.47.0",
+    "@typescript-eslint/parser": "^8.47.0",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "jiti": "^2.6.1",
-    "nodemon": "^3.1.10",
+    "nodemon": "^3.1.11",
     "prettier": "3.6.2",
     "ts-node": "^10.9.2",
     "twilio-run": "^4.2.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.3"
+    "typescript-eslint": "^8.47.0"
   },
   "engines": {
     "node": "22"
   },
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.22.0",
   "type": "module"
 }
