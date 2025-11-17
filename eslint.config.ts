@@ -2,6 +2,7 @@ import { defineConfig, globalIgnores } from "eslint/config";
 import prettier from "eslint-config-prettier/flat";
 import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
+import parser from "@typescript-eslint/parser";
 
 export default defineConfig([
   prettier,
@@ -20,7 +21,7 @@ export default defineConfig([
       ],
     },
     languageOptions: {
-      parser: "@typescript-eslint/parser",
+      parser,
       parserOptions: {
         tsconfigRootDir: __dirname,
         project: "./tsconfig.json",

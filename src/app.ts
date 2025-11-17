@@ -1,19 +1,22 @@
 import Twilio from "twilio";
 import "dotenv/config";
 import express from "express";
-import { validateTwilioRequest } from "./helpers.ts";
+import { endTwilioResponse, validateTwilioRequest } from "./helpers.ts";
 
 const VOICE_PARAMS = {
   language: "fr-FR",
   voice: "Google.fr-FR-Chirp3-HD-Aoede",
 } as const;
 
+const LOCK_CRF_HOSTNAME = process.env.LOCK_CRF_HOSTNAME || "";
+const API_SECRET = process.env.API_SECRET || "";
+
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 // Handle incoming calls
-app.post("/", (req, res) => {
-  if (!validateTwilioRequest(req, res)) {
+app.post("/", async (req, res) => {
+  if (!validateTwilioRequest(req)) {
     return res.status(403).send("Forbidden");
   }
 
@@ -21,28 +24,53 @@ app.post("/", (req, res) => {
   const from = body.From || "unknown";
   const to = body.To || "unknown";
 
+  const formData = new FormData();
+  formData.append("from", from);
+  formData.append("to", to);
+  formData.append("apiSecret", API_SECRET);
+
   const response = new Twilio.twiml.VoiceResponse();
 
-  response.gather({
-    input: ["dtmf"],
-    numDigits: 1,
-    timeout: 2,
-    actionOnEmptyResult: false,
-    action: "/action",
+  fetch(`${LOCK_CRF_HOSTNAME}/api/phone`, {
     method: "POST",
-  });
+    body: formData,
+  }).then((r) =>
+    r
+      .json()
+      .then((data: any) => {
+        if (data.success) {
+          response.gather({
+            input: ["dtmf"],
+            numDigits: 1,
+            timeout: 2,
+            actionOnEmptyResult: false,
+            action: "/action",
+            method: "POST",
+          });
 
-  response.say(VOICE_PARAMS, "Bienvenue");
-  response.redirect({ method: "POST" }, "/ask");
+          response.say(VOICE_PARAMS, "Bienvenue");
+          response.redirect({ method: "POST" }, "/ask");
 
-  res.status(200);
-  res.set("Content-Type", "text/xml");
-  res.send(response.toString());
+          endTwilioResponse(res, response);
+        } else {
+          response.say(VOICE_PARAMS, data.error.message + " Au revoir.");
+          endTwilioResponse(res, response);
+        }
+      })
+      .catch(() => {
+        response.say(
+          VOICE_PARAMS,
+          "Désolé, une erreur interne s'est produite. Contactez votre responsable d'activité pour actionner la serrure. Au revoir.",
+        );
+
+        endTwilioResponse(res, response);
+      }),
+  );
 });
 
 // Handle question
 app.post("/ask", (req, res) => {
-  if (!validateTwilioRequest(req, res)) {
+  if (!validateTwilioRequest(req)) {
     return res.status(403).send("Forbidden");
   }
 
@@ -61,14 +89,12 @@ app.post("/ask", (req, res) => {
     method: "POST",
   });
 
-  res.status(200);
-  res.set("Content-Type", "text/xml");
-  res.send(response.toString());
+  endTwilioResponse(res, response);
 });
 
 // Handle gather action
 app.post("/action", (req, res) => {
-  if (!validateTwilioRequest(req, res)) {
+  if (!validateTwilioRequest(req)) {
     return res.status(403).send("Forbidden");
   }
 
@@ -93,13 +119,11 @@ app.post("/action", (req, res) => {
       break;
   }
 
-  res.status(200);
-  res.set("Content-Type", "text/xml");
-  res.send(response.toString());
+  endTwilioResponse(res, response);
 });
 
 // Health check endpoint
-app.get("/health", (req, res) => {
+app.get("/health", (_, res) => {
   res.status(200).send("OK");
 });
 
