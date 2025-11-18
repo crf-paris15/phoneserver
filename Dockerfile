@@ -23,6 +23,9 @@ RUN pnpm install --frozen-lockfile && \
 FROM base AS runner
 WORKDIR /app
 
+ARG GIT_TAG
+ENV GIT_TAG=$GIT_TAG
+
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 hono
 
