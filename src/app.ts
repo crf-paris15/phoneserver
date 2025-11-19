@@ -189,7 +189,7 @@ app.post("/actionRequest", (req, res) => {
               VOICE_PARAMS,
               "Ordre envoyé à la serrure, ne raccrochez pas.",
             );
-            response.pause({ length: 3 });
+            response.pause({ length: 2 });
             response.redirect(
               { method: "POST" },
               "/checkActionResult?requestId=" + data.request.id,
@@ -199,7 +199,7 @@ app.post("/actionRequest", (req, res) => {
               VOICE_PARAMS,
               "Nouvel ordre envoyé à la serrure, ne raccrochez pas.",
             );
-            response.pause({ length: 3 });
+            response.pause({ length: 2 });
             response.redirect(
               { method: "POST" },
               "/checkActionResult?requestIdLast=" + data.request.id,
@@ -274,9 +274,9 @@ app.post("/checkActionResult", async (req, res) => {
                 } else {
                   response.say(
                     VOICE_PARAMS,
-                    "Erreur, le moteur est bloqué. Vérifiez que la porte est bien poussée à fond. Nouvel essai de verrouillage dans 5 secondes.",
+                    "Erreur, le moteur est bloqué. Vérifiez que la porte est bien poussée à fond. Nouvel essai de verrouillage dans 4 secondes.",
                   );
-                  response.pause({ length: 5 });
+                  response.pause({ length: 4 });
                   response.redirect(
                     { method: "POST" },
                     `/actionRequest?actionLast=2`,
@@ -303,7 +303,7 @@ app.post("/checkActionResult", async (req, res) => {
                     VOICE_PARAMS,
                     "En attente de la réponse de la serrure, veuillez patienter.",
                   );
-                  response.pause({ length: 5 });
+                  response.pause({ length: 3 });
                   response.redirect(
                     { method: "POST" },
                     `/checkActionResult?requestIdLast=${requestId}`,
