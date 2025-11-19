@@ -165,7 +165,9 @@ app.post("/actionRequest", (req, res) => {
   const body = req.body;
   const from = body.From || "unknown";
   const to = body.To || "unknown";
-  const action = req.query.action;
+
+  const action = req.query.action || req.query.actionLast;
+  const lastTry = (req.query.actionLast ? true : false) || false;
 
   if (action === "1" || action === "2") {
     const formData = new FormData();
@@ -182,15 +184,27 @@ app.post("/actionRequest", (req, res) => {
         const response = new Twilio.twiml.VoiceResponse();
 
         if (data.success) {
-          response.say(
-            VOICE_PARAMS,
-            "Ordre envoyé à la serrure, ne raccrochez pas.",
-          );
-          response.pause({ length: 3 });
-          response.redirect(
-            { method: "POST" },
-            "/checkActionResult?requestId=" + data.request.id,
-          );
+          if (lastTry === false) {
+            response.say(
+              VOICE_PARAMS,
+              "Ordre envoyé à la serrure, ne raccrochez pas.",
+            );
+            response.pause({ length: 3 });
+            response.redirect(
+              { method: "POST" },
+              "/checkActionResult?requestId=" + data.request.id,
+            );
+          } else {
+            response.say(
+              VOICE_PARAMS,
+              "Nouvel ordre envoyé à la serrure, ne raccrochez pas.",
+            );
+            response.pause({ length: 3 });
+            response.redirect(
+              { method: "POST" },
+              "/checkActionResult?requestIdLast=" + data.request.id,
+            );
+          }
         } else {
           response.say(
             VOICE_PARAMS,
@@ -260,12 +274,12 @@ app.post("/checkActionResult", async (req, res) => {
                 } else {
                   response.say(
                     VOICE_PARAMS,
-                    "Erreur, le moteur est bloqué. Vérifiez que la porte est bien poussée à fond. Nouvel essai de verrouillage dans 10 secondes.",
+                    "Erreur, le moteur est bloqué. Vérifiez que la porte est bien poussée à fond. Nouvel essai de verrouillage dans 5 secondes.",
                   );
-                  response.pause({ length: 10 });
+                  response.pause({ length: 5 });
                   response.redirect(
                     { method: "POST" },
-                    `/checkActionResult?requestIdLast=${requestId}`,
+                    `/actionRequest?actionLast=2`,
                   );
                 }
               } else if (
