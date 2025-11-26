@@ -14,7 +14,7 @@
     "@twilio/runtime-handler": "2.1.0",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "twilio": "5.10.5"
+    "twilio": "5.10.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
