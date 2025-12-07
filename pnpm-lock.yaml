@@ -18,8 +18,8 @@ importers:
         specifier: ^5.2.1
         version: 5.2.1
       twilio:
-        specifier: 5.10.6
-        version: 5.10.6
+        specifier: 5.10.7
+        version: 5.10.7
     devDependencies:
       '@eslint/js':
         specifier: ^9.39.1
@@ -1340,19 +1340,19 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  jsonwebtoken@9.0.2:
-    resolution: {integrity: sha512-PRp66vJ865SSqOlgqS8hujT5U4AOgMfhrwYIuIhfKaoSCZcirrmASQr8CX7cUg+RMih+hgznrjp99o+W4pJLHQ==}
+  jsonwebtoken@9.0.3:
+    resolution: {integrity: sha512-MT/xP0CrubFRNLNKvxJ2BYfy53Zkm++5bX9dtuPbqAeQpTVe0MQTFhao8+Cp//EmJp244xt6Drw/GVEGCUj40g==}
     engines: {node: '>=12', npm: '>=6'}
 
   jsprim@1.4.2:
     resolution: {integrity: sha512-P2bSOMAc/ciLz6DzgjVlGJP9+BrJWu5UDGK70C2iweC5QBIeFf0ZXRvGjEj2uYgrY2MkAAhsSWHDWlFtEroZWw==}
     engines: {node: '>=0.6.0'}
 
-  jwa@1.4.2:
-    resolution: {integrity: sha512-eeH5JO+21J78qMvTIDdBXidBd6nG2kZjg5Ohz/1fpa28Z4CcsWUzJ1ZZyFq/3z3N17aZy+ZuBoHljASbL1WfOw==}
+  jwa@2.0.1:
+    resolution: {integrity: sha512-hRF04fqJIP8Abbkq5NKGN0Bbr3JxlQ+qhZufXVr0DvujKy93ZCbXZMHDL4EOtodSbCWxOqR8MS1tXA5hwqCXDg==}
 
-  jws@3.2.2:
-    resolution: {integrity: sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA==}
+  jws@4.0.1:
+    resolution: {integrity: sha512-EKI/M/yqPncGUUh44xz0PxSidXFr/+r0pA70+gIYhjv+et7yxM+s29Y+VGDkovRofQem0fs7Uvf4+YmAdyRduA==}
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -2106,8 +2106,8 @@ packages:
     resolution: {integrity: sha512-LdNBQfOe0dY2oJH2sAsrxazpgfFQo5yXGxe96QA8UWB5uu+433PrUbkv8gQ5RmrRCqUTPQ0aOrIyAdBr1aB03Q==}
     engines: {node: '>=14.0'}
 
-  twilio@5.10.6:
-    resolution: {integrity: sha512-mZkB1JHvIuxv4J0MUP+iNyK4xQi6XhtqZdiowDSZzOgT2MhYhGOtDTorb6+Y8NFsb589W3njtAUnRCPcXaiX3g==}
+  twilio@5.10.7:
+    resolution: {integrity: sha512-pELNeyQqkJMW/UkbcdNGDfOjMyt1FXoYOKXBDqOViHmcdJ04cq8Ty3VsrEAabi97YesK3T2v5KP5XKPY8uUx9w==}
     engines: {node: '>=14.0'}
 
   type-check@0.4.0:
@@ -3744,9 +3744,9 @@ snapshots:
 
   json5@2.2.3: {}
 
-  jsonwebtoken@9.0.2:
+  jsonwebtoken@9.0.3:
     dependencies:
-      jws: 3.2.2
+      jws: 4.0.1
       lodash.includes: 4.3.0
       lodash.isboolean: 3.0.3
       lodash.isinteger: 4.0.4
@@ -3765,15 +3765,15 @@ snapshots:
       verror: 1.10.0
     optional: true
 
-  jwa@1.4.2:
+  jwa@2.0.1:
     dependencies:
       buffer-equal-constant-time: 1.0.1
       ecdsa-sig-formatter: 1.0.11
       safe-buffer: 5.2.1
 
-  jws@3.2.2:
+  jws@4.0.1:
     dependencies:
-      jwa: 1.4.2
+      jwa: 2.0.1
       safe-buffer: 5.2.1
 
   keyv@4.5.4:
@@ -4614,7 +4614,7 @@ snapshots:
       axios: 1.13.2(debug@3.2.7)
       dayjs: 1.11.19
       https-proxy-agent: 5.0.1
-      jsonwebtoken: 9.0.2
+      jsonwebtoken: 9.0.3
       qs: 6.14.0
       scmp: 2.1.0
       url-parse: 1.5.10
@@ -4623,12 +4623,12 @@ snapshots:
       - debug
       - supports-color
 
-  twilio@5.10.6:
+  twilio@5.10.7:
     dependencies:
       axios: 1.13.2(debug@3.2.7)
       dayjs: 1.11.19
       https-proxy-agent: 5.0.1
-      jsonwebtoken: 9.0.2
+      jsonwebtoken: 9.0.3
       qs: 6.14.0
       scmp: 2.1.0
       xmlbuilder: 13.0.2
