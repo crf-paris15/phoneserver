@@ -13,7 +13,7 @@ RUN apk update
 RUN apk add --no-cache gcompat
 WORKDIR /app
 
-COPY package*json pnpm-lock.yaml tsconfig.json ./
+COPY package*json pnpm-workspace.yaml pnpm-lock.yaml tsconfig.json ./
 COPY src ./src
 
 RUN pnpm install --frozen-lockfile && \
