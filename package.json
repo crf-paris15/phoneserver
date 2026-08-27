@@ -12,28 +12,28 @@
   },
   "dependencies": {
     "@twilio/runtime-handler": "2.1.0",
-    "dotenv": "^17.3.1",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "twilio": "5.13.0"
+    "twilio": "6.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@types/node": "^25.5.0",
-    "@typescript-eslint/eslint-plugin": "^8.57.1",
-    "@typescript-eslint/parser": "^8.57.1",
-    "eslint": "^10.1.0",
+    "@types/node": "^26.4.0",
+    "@typescript-eslint/eslint-plugin": "^8.68.0",
+    "@typescript-eslint/parser": "^8.68.0",
+    "eslint": "^10.9.1",
     "eslint-config-prettier": "^10.1.8",
-    "jiti": "^2.6.1",
+    "jiti": "^2.7.0",
     "nodemon": "^3.1.14",
-    "prettier": "3.8.1",
-    "ts-node": "^10.9.2",
+    "prettier": "3.9.6",
+    "tsx": "^4.23.12",
     "twilio-run": "^5.0.1",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.1"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.68.0"
   },
   "engines": {
     "node": "22"
   },
-  "packageManager": "pnpm@10.32.1",
+  "packageManager": "pnpm@11.24.0",
   "type": "module"
 }
