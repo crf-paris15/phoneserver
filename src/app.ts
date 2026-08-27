@@ -59,7 +59,10 @@ app.post("/", async (req, res) => {
             method: "POST",
           });
 
-          response.say(VOICE_PARAMS, "Bienvenue");
+          response.say(
+            VOICE_PARAMS,
+            "Bienvenue. Avant toute chose, merci de pousser fort la porte pour la fermer au maximum.",
+          );
           response.redirect({ method: "POST" }, "/ask");
 
           endTwilioResponse(res, response);
@@ -89,7 +92,7 @@ app.post("/ask", (req, res) => {
   const response = new Twilio.twiml.VoiceResponse();
   response.say(
     VOICE_PARAMS,
-    "Pour ouvrir la serrure, appuyez sur 1. Pour fermer la serrure, appuyez sur 2.",
+    "Après cette phrase, pour ouvrir la serrure, appuyez sur 1. Pour fermer la serrure, appuyez sur 2.",
   );
 
   response.gather({
@@ -125,7 +128,10 @@ app.post("/action", (req, res) => {
       response.redirect({ method: "POST" }, "/actionRequest?action=2");
       break;
     case "":
-      response.say(VOICE_PARAMS, "Aucune entrée reçue.");
+      response.say(
+        VOICE_PARAMS,
+        "Aucune entrée reçue. Merci d'attendre la fin de la phrase pour appuyer sur une touche.",
+      );
       response.redirect({ method: "POST" }, "/ask");
       break;
     case "9":
