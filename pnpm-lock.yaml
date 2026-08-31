@@ -25,8 +25,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.9.1(jiti@2.7.0)(supports-color@5.5.0))
       '@types/node':
-        specifier: ^26.3.0
-        version: 26.3.0
+        specifier: ^26.4.0
+        version: 26.4.0
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.68.0
         version: 8.68.0(@typescript-eslint/parser@8.68.0(eslint@10.9.1(jiti@2.7.0)(supports-color@5.5.0))(supports-color@5.5.0)(typescript@6.0.3))(eslint@10.9.1(jiti@2.7.0)(supports-color@5.5.0))(supports-color@5.5.0)(typescript@6.0.3)
@@ -53,7 +53,7 @@ importers:
         version: 4.23.12
       twilio-run:
         specifier: ^5.0.1
-        version: 5.0.1(@types/node@26.3.0)(supports-color@5.5.0)(typescript@6.0.3)
+        version: 5.0.1(@types/node@26.4.0)(supports-color@5.5.0)(typescript@6.0.3)
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -455,8 +455,8 @@ packages:
   '@types/node@18.19.130':
     resolution: {integrity: sha512-GRaXQx6jGfL8sKfaIDD6OupbIHBr9jv7Jnaml9tB7l4v068PAOXqfcujMMo5PhbIs6ggR1XODELqahT2R8v0fg==}
 
-  '@types/node@26.3.0':
-    resolution: {integrity: sha512-L3fgrnchriRC2ExBflb8j4uZZURHZfQsmQeyVzhjcHW4kkwVyo8/0h1B2MVzMTrYUJYu6G7EWs14hW/L9putqw==}
+  '@types/node@26.4.0':
+    resolution: {integrity: sha512-faiGnoIrLH/V8cibOMEAZ8pMw6oXqSukl29ra4mN8GdaB2ZewzeaLj+INpV5N+Z1eKWzY+IzaIZH2EIR6YZRNQ==}
 
   '@types/qs@6.15.1':
     resolution: {integrity: sha512-GZHUBZR9hckSUhrxmp1nG6NwdpM9fCunJwyThLW1X3AyHgd9IlHb6VANpQQqDr2o/qQp6McZ3y/IA2rVzKzSbw==}
@@ -2372,12 +2372,12 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@inquirer/external-editor@1.0.3(@types/node@26.3.0)':
+  '@inquirer/external-editor@1.0.3(@types/node@26.4.0)':
     dependencies:
       chardet: 2.2.0
       iconv-lite: 0.7.3
     optionalDependencies:
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
 
   '@ngrok/ngrok-android-arm64@1.7.0':
     optional: true
@@ -2492,13 +2492,13 @@ snapshots:
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
 
   '@types/cacheable-request@6.0.3':
     dependencies:
       '@types/http-cache-semantics': 4.2.0
       '@types/keyv': 3.1.4
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
       '@types/responselike': 1.0.3
 
   '@types/ci-info@3.1.4':
@@ -2507,7 +2507,7 @@ snapshots:
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
 
   '@types/esrecurse@4.3.1': {}
 
@@ -2515,11 +2515,11 @@ snapshots:
 
   '@types/execa@0.9.0':
     dependencies:
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
 
   '@types/express-serve-static-core@4.19.9':
     dependencies:
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
       '@types/qs': 6.15.1
       '@types/range-parser': 1.2.7
       '@types/send': 1.2.1
@@ -2548,7 +2548,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
 
   '@types/mime-types@2.1.4': {}
 
@@ -2558,7 +2558,7 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
-  '@types/node@26.3.0':
+  '@types/node@26.4.0':
     dependencies:
       undici-types: 8.3.0
 
@@ -2568,26 +2568,26 @@ snapshots:
 
   '@types/recursive-readdir@2.2.4':
     dependencies:
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
 
   '@types/semver@7.8.0': {}
 
   '@types/send@1.2.1':
     dependencies:
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
 
   '@types/serve-static@2.2.0':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
 
   '@types/through@0.0.33':
     dependencies:
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
 
   '@typescript-eslint/eslint-plugin@8.68.0(@typescript-eslint/parser@8.68.0(eslint@10.9.1(jiti@2.7.0)(supports-color@5.5.0))(supports-color@5.5.0)(typescript@6.0.3))(eslint@10.9.1(jiti@2.7.0)(supports-color@5.5.0))(supports-color@5.5.0)(typescript@6.0.3)':
     dependencies:
@@ -3608,9 +3608,9 @@ snapshots:
 
   inherits@2.0.4: {}
 
-  inquirer@8.2.7(@types/node@26.3.0):
+  inquirer@8.2.7(@types/node@26.4.0):
     dependencies:
-      '@inquirer/external-editor': 1.0.3(@types/node@26.3.0)
+      '@inquirer/external-editor': 1.0.3(@types/node@26.4.0)
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       cli-cursor: 3.1.0
@@ -4344,7 +4344,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  twilio-run@5.0.1(@types/node@26.3.0)(supports-color@5.5.0)(typescript@6.0.3):
+  twilio-run@5.0.1(@types/node@26.4.0)(supports-color@5.5.0)(typescript@6.0.3):
     dependencies:
       '@twilio-labs/serverless-api': 5.7.0(supports-color@5.5.0)
       '@twilio-labs/serverless-runtime-types': 4.0.1(debug@3.2.7(supports-color@5.5.0))(supports-color@5.5.0)
@@ -4368,7 +4368,7 @@ snapshots:
       express-useragent: 1.0.15
       fast-redact: 1.5.0
       got: 11.8.6
-      inquirer: 8.2.7(@types/node@26.3.0)
+      inquirer: 8.2.7(@types/node@26.4.0)
       is-ci: 2.0.0
       json5: 2.2.3
       listr2: 5.0.8(enquirer@2.4.1)
